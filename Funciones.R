@@ -1,10 +1,10 @@
 #Todas las funciones asumen que se tiene la columna de fecha primero y todos las demas columnas
-#son precios de diferentes aciones
+#son precios de diferentes acciones
 
 #Ademas por ahora todo sera llevado a terminos anuales
 
-crecimiento <- function(x, type = "logarithm"){
-  if(type == "logarithm"){
+crecimiento <- function(x, type = "logarithmic"){
+  if(type == "logarithmic"){
     cbind(x[-1, 1], log( x[-1,2:ncol(x)] / x[-nrow(x),2:ncol(x)]) )
   }
   else if(type == "arithmetic"){
